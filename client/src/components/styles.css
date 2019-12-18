@@ -1,0 +1,12 @@
+.Main {
+  position: absolute;
+  top: 30%;
+  left: 12%;
+  width: 75%;
+}
+
+@media only screen and (max-width : 450px) {
+  .Main {
+    top: 30%;
+  }
+}

@@ -1,0 +1,18 @@
+.time {
+  text-align: center;
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  background-color: white;
+}
+
+.limited {
+  background-color: #f7e89d;
+}
+
+.bullet {
+  background-color: #f0b2a1;
+  height: 50px;
+}

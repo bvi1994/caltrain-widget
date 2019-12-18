@@ -1,0 +1,11 @@
+body {
+  background-color: white;
+}
+
+
+@media only screen and (max-width: 450px) {
+    body {
+      margin-top: 25%;
+      width: 83%;
+    }
+}

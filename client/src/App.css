@@ -1,0 +1,25 @@
+.App {
+  position: relative;
+  /* top: 25%; */
+  left: 25%;
+  /* transform: translate(-50%, -50%); */
+  background-color: #E31836;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 100%;
+  height: auto;
+  width: 25%;
+  border-radius: 50%;
+  padding-bottom: 40%;
+  padding-right: 25%;
+}
+
+@media only screen and (max-width: 450px) {
+    .App {
+      height: 350px;
+      width: 90%;
+      left: 0;
+
+    }
+}
