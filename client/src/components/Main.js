@@ -103,7 +103,8 @@ class Main extends Component {
 
   getListOfStations = async () => {
     // Getting the list of station names for the dropdown menu
-    const serviceDay = (this.state.currentDay > 0 && this.state.currentDay < 6) ? 'weekday' : 'weekend'
+    const serviceDay = (this.state.currentDay > 0 && this.state.currentDay < 6) ? 'weekday' : 'weekend';
+    console.log(`porty: ${process.env.PORT ||'http://localhost:3002'}`)
     const response = await axios(`${process.env.PORT ||'http://localhost:3002'}/${serviceDay}/getStationList`);
     const stopsNames = response.data.stationList;
     this.setState({
