@@ -108,6 +108,7 @@ app.get("/getStationsData", async (req, res) => {
     if(error) {
       console.log(`Error has occurred in /getStationsData: ${error}`)
     }
+    console.log('yoyoyoyoyoyoyo')
     result = lodash.map(result, 'station');
     res.json({
       stationData: result,
