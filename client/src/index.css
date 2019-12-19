@@ -3,9 +3,9 @@ body {
 }
 
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
     body {
-      margin-top: 25%;
-      width: 83%;
+      margin-top: 20%;
+      width: 85%;
     }
 }

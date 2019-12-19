@@ -1,25 +1,28 @@
 .App {
   position: relative;
   /* top: 25%; */
-  left: 25%;
+  left: 29%;
   /* transform: translate(-50%, -50%); */
   background-color: #E31836;
   border-width: 2px;
   border-color: black;
   border-style: solid;
   border-radius: 100%;
-  height: auto;
-  width: 25%;
+  height: 50%;
+  width: 15%;
   border-radius: 50%;
-  padding-bottom: 40%;
+  padding-bottom: 35%;
   padding-right: 25%;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
     .App {
-      height: 350px;
-      width: 90%;
-      left: 0;
-
+      height: 250px;
+      width: 70%;
+      left: 10%;
     }
+}
+
+.Disclaimer {
+  margin-top: 10px;
 }
