@@ -6,7 +6,7 @@
     "node": "10.14.1"
   },
   "scripts": {
-    "start": "node ./server/src/server.js",
+    "start": "\"npm run server\" \"npm run client\"",
     "server": "nodemon ./server/src/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
