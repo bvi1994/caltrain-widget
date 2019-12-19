@@ -4,6 +4,7 @@ const cors = require("cors");
 const express = require("express");
 const mongoose = require('mongoose');
 const lodash = require('lodash');
+const path = require('path')
 const constants = require("./../Server.constants");
 
 mongoose.connect(constants.MONGODBADDRESS, { useNewUrlParser: true });
@@ -138,8 +139,13 @@ app.get("/:day/getStationList", async (req, res) => {
   });
 })
 
-
-
 app.listen(process.env.PORT || 3002, () => {
   console.log("server ready");
 });
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
