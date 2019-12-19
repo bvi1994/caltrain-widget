@@ -7,7 +7,7 @@ const lodash = require('lodash');
 const path = require('path')
 const constants = require("./../Server.constants");
 
-mongoose.connect(constants.MONGODBADDRESS, { useNewUrlParser: true });
+mongoose.connect(constants.MONGODBADDRESS || process.env.MONGODBADDRESS, { useNewUrlParser: true });
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
