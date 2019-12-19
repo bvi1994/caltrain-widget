@@ -141,7 +141,7 @@ app.get("/:day/getStationList", async (req, res) => {
 })
 
 app.listen(process.env.PORT || 3002, () => {
-  console.log("server ready");
+  console.log(`server ready on port ${process.env.PORT || 3002}`);
 });
 
 if(process.env.NODE_ENV === 'production'){
