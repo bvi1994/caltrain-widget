@@ -94,7 +94,7 @@ class Main extends Component {
 
   getStationsData = async () => {
     // Makes call to grab the station data such as stop ids for that sation
-    const response = await axios(`http://localhost:3002/getStationsData`);
+    const response = await axios(`${process.env.PORT ||'http://localhost:3002'}/getStationsData`);
     const stopsData = response.data.stationData;
     this.setState({
       stationsData: stopsData,
@@ -104,7 +104,7 @@ class Main extends Component {
   getListOfStations = async () => {
     // Getting the list of station names for the dropdown menu
     const serviceDay = (this.state.currentDay > 0 && this.state.currentDay < 6) ? 'weekday' : 'weekend'
-    const response = await axios(`http://localhost:3002/${serviceDay}/getStationList`);
+    const response = await axios(`${process.env.PORT ||'http://localhost:3002'}/${serviceDay}/getStationList`);
     const stopsNames = response.data.stationList;
     this.setState({
       stationsList: stopsNames.map((station) => {
@@ -119,8 +119,8 @@ class Main extends Component {
     // Make API calls to get the timetables for the selected stations
     const {originStationId, destinationStationId} = this.state;
     const serviceDay = (this.state.currentDay > 0 && this.state.currentDay < 6) ? 'weekday' : 'weekend'
-    const responseOrigin = await axios(`http://localhost:3002/getDepartTimes/${serviceDay}/${originStationId}`)
-    const responseDestination = await axios(`http://localhost:3002/getArriveTimes/${serviceDay}/${destinationStationId}`)
+    const responseOrigin = await axios(`${process.env.PORT ||'http://localhost:3002'}/getDepartTimes/${serviceDay}/${originStationId}`)
+    const responseDestination = await axios(`${process.env.PORT ||'http://localhost:3002'}/getArriveTimes/${serviceDay}/${destinationStationId}`)
     const originTimeTable = responseOrigin.data.scheduledTimes.map((time) => JSON.stringify(time));
     const departTimeTable = responseDestination.data.scheduledTimes.map((time => JSON.stringify(time)));
     this.setState({
