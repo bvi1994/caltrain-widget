@@ -95,7 +95,7 @@ class Main extends Component {
   getStationsData = async () => {
     // Makes call to grab the station data such as stop ids for that sation
     console.log(`porty: ${process.env.PORT ||'http://localhost:3002'}`)
-    const response = await axios(`${process.env.PORT ||'http://localhost:3002'}/getStationsData`);
+    const response = await axios(`https://caltrain-widget.herokuapp.com/getStationsData`);
     const stopsData = response.data.stationData;
     this.setState({
       stationsData: stopsData,
