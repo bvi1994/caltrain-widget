@@ -94,7 +94,6 @@ class Main extends Component {
 
   getStationsData = async () => {
     // Makes call to grab the station data such as stop ids for that sation
-    console.log(`porty: ${process.env.PORT ||'http://localhost:3002'}`)
     const response = await axios(`https://caltrain-widget.herokuapp.com/getStationsData`);
     const stopsData = response.data.stationData;
     this.setState({
@@ -120,8 +119,8 @@ class Main extends Component {
     // Make API calls to get the timetables for the selected stations
     const {originStationId, destinationStationId} = this.state;
     const serviceDay = (this.state.currentDay > 0 && this.state.currentDay < 6) ? 'weekday' : 'weekend'
-    const responseOrigin = await axios(`${process.env.PORT ||'http://localhost:3002'}/getDepartTimes/${serviceDay}/${originStationId}`)
-    const responseDestination = await axios(`${process.env.PORT ||'http://localhost:3002'}/getArriveTimes/${serviceDay}/${destinationStationId}`)
+    const responseOrigin = await axios(`https://caltrain-widget.herokuapp.com/getDepartTimes/${serviceDay}/${originStationId}`)
+    const responseDestination = await axios(`https://caltrain-widget.herokuapp.com/getArriveTimes/${serviceDay}/${destinationStationId}`)
     const originTimeTable = responseOrigin.data.scheduledTimes.map((time) => JSON.stringify(time));
     const departTimeTable = responseDestination.data.scheduledTimes.map((time => JSON.stringify(time)));
     this.setState({
