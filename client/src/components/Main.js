@@ -105,7 +105,7 @@ class Main extends Component {
   getListOfStations = async () => {
     // Getting the list of station names for the dropdown menu
     const serviceDay = (this.state.currentDay > 0 && this.state.currentDay < 6) ? 'weekday' : 'weekend';
-    const response = await axios(`${process.env.PORT ||'http://localhost:3002'}/${serviceDay}/getStationList`);
+    const response = await axios(`https://caltrain-widget.herokuapp.com/${serviceDay}/getStationList`);
     const stopsNames = response.data.stationList;
     this.setState({
       stationsList: stopsNames.map((station) => {
