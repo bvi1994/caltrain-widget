@@ -16,7 +16,7 @@ let db = mongoose.connection;
 db.once('open', () => console.log('connected to the database'));
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-coonsole.log('logging in with: ', constants.MONGODBADDRESS)
+console.log('logging in with: ', constants.MONGODBADDRESS)
 
 const sortTimeArray = (timeTableArray) => {
   for(let i = 0; i < timeTableArray.length; i++){
